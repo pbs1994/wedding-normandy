@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════════════════ -->
+  <title>Wedding in Normandy — Château Weddings at Bonnemare &amp; Deauville</title>
+  <meta name="description" content="A private atelier for château weddings in Normandy — from the Renaissance halls of Château de Bonnemare to the Belle Époque coast of Deauville." />
+
+  <!-- ═══ FAVICON ══════════════════════════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- ═══ TYPE ══════════════════════════════════════════════════════════════
+       Fraunces — editorial display serif, opsz axis, used with restraint
+       Archivo — precise structural sans, used for nav/labels/body/forms
+  ══════════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SIGNATURE MOTIF — a single line-art château skyline (turret, corps de
+       logis, turret), defined once and reused everywhere via <use>. The hero
+       instance animates its stroke in on load; the divider and footer
+       instances are static, low-opacity repeats.
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="chateau-motif" viewBox="0 0 600 200">
+      <path id="chateau-path" d="M0,175 L40,175 L40,110 L72,45 L104,110 L104,140 L160,140 L160,100 L200,100 L235,40 L270,100 L310,100 L310,140 L366,140 L366,105 L398,42 L430,105 L430,175 L600,175 M235,40 L235,24 L246,29 L235,34" />
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logotype" href="#top">Wedding in Normandy</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav__links" id="nav-links">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#venues">Venues</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="nav__ghost-cta" href="#contact">Request an Invitation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-label="Introduction">
+      <!-- Photo: a couple embracing atop the Étretat cliffs, the Falaise d'Aval arch behind them. -->
+      <img class="hero__image" src="images/hero-etretat.jpg" alt="" aria-hidden="true" />
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="eyebrow" data-load-item style="--i:0">Normandy, France</p>
+        <h1 class="hero__headline" data-load-item style="--i:1">Married inside four centuries of stone.</h1>
+        <p class="hero__subline" data-load-item style="--i:2">Wedding in Normandy curates château weddings across the region — from the Renaissance halls of Château de Bonnemare to the Belle Époque coast of Deauville — for couples who want the day to feel inevitable, not arranged.</p>
+      </div>
+      <div class="hero__scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section id="philosophy" class="philosophy" data-reveal>
+      <div class="philosophy__text">
+        <p class="eyebrow">Philosophy</p>
+        <h2>Why a Château</h2>
+        <p>A château is not a backdrop. It is four hundred years of families, harvests, and weddings, pressed into stone and never quite settled. That history is what makes the day feel larger than the two of you — not because it is grand, but because it is real.</p>
+        <blockquote class="pull-quote">A château does not perform elegance. It simply has never known anything else.</blockquote>
+        <p>We do not rent a room and dress it as a château. We work with properties whose architecture, land, and light already carry that weight — a staircase that has seen a hundred brides descend it, a park laid out for processions long before yours, a chapel built for exactly this.</p>
+      </div>
+      <div class="philosophy__image">
+        <!-- Photo: golden-hour portrait in the park at Château de Bonnemare. -->
+        <img src="images/philosophy-park.jpg" alt="" aria-hidden="true" />
+      </div>
+    </section>
+
+    <section class="stats" data-reveal aria-label="Château de Bonnemare in numbers">
+      <div class="stats__grid">
+        <div class="stat" data-reveal-child style="--i:0">
+          <p class="stat__number"><span data-count-to="16">0</span><sup>th</sup></p>
+          <p class="stat__label">Century, Renaissance-Built</p>
+        </div>
+        <div class="stat" data-reveal-child style="--i:1">
+          <p class="stat__number"><span data-count-to="22">0</span></p>
+          <p class="stat__label">Hectares of Park &amp; Garden</p>
+        </div>
+        <div class="stat" data-reveal-child style="--i:2">
+          <p class="stat__number"><span data-count-to="45">0</span></p>
+          <p class="stat__label">Guest Beds On-Site</p>
+        </div>
+        <div class="stat" data-reveal-child style="--i:3">
+          <p class="stat__number"><span data-count-to="2">0</span></p>
+          <p class="stat__label">Historic Monument Suites</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="motif-divider" aria-hidden="true">
+      <svg class="chateau-mark chateau-mark--static" viewBox="0 0 600 200">
+        <use href="#chateau-motif"></use>
+      </svg>
+    </div>
+
+    <section id="venues" class="venues" data-reveal>
+      <header class="section-head">
+        <p class="eyebrow">Our Venues</p>
+        <h2>Normandy, and the Coast</h2>
+      </header>
+      <div class="venues__grid">
+        <article class="venue venue--feature" data-reveal-child style="--i:0">
+          <div class="venue__image">
+            <!-- Photo: Château de Bonnemare, Radepont — 16th-century facade and lawn. -->
+            <img src="images/venue-bonnemare.jpg" alt="Château de Bonnemare, a 16th-century château in the Andelle valley" loading="lazy" />
+          </div>
+          <div class="venue__caption">
+            <p class="venue__tag">16th-Century Château</p>
+            <h3>Château de Bonnemare</h3>
+            <p class="venue__region">Radepont, Eure — the Andelle Valley</p>
+            <p class="venue__desc">A Renaissance château on 22 hectares, with a private chapel, walled gardens, and two suites classified as historic monuments.</p>
+          </div>
+        </article>
+        <article class="venue" data-reveal-child style="--i:1">
+          <div class="venue__image">
+            <!-- Photo: Belle Époque half-timbered villas above the beach on the Côte Fleurie. -->
+            <img src="images/venue-deauville.jpg" alt="Belle Époque half-timbered villas overlooking the beach on the Côte Fleurie near Deauville" loading="lazy" />
+          </div>
+          <div class="venue__caption">
+            <p class="venue__tag">Coastal Destination</p>
+            <h3>Deauville</h3>
+            <p class="venue__region">Côte Fleurie</p>
+            <p class="venue__desc">For couples drawn to the coast: Belle Époque villas, boardwalk light, and the particular elegance of Deauville out of season.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery" data-reveal aria-label="Moments at Château de Bonnemare">
+      <header class="section-head gallery__head">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2>Moments</h2>
+        </div>
+        <div class="gallery__controls">
+          <button class="gallery__prev" type="button" aria-label="Previous photo">←</button>
+          <button class="gallery__next" type="button" aria-label="Next photo">→</button>
+        </div>
+      </header>
+      <div class="gallery__track" role="group" aria-label="Scrollable photo gallery — drag or use the arrows to browse">
+        <figure class="gallery__item">
+          <img src="images/gallery-reception.jpg" alt="Guests gathered on the lawn at Château de Bonnemare in golden-hour light" loading="lazy" />
+          <figcaption>The lawn, golden hour</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/gallery-barn.jpg" alt="Long tables set for a reception inside the half-timbered barn at Bonnemare" loading="lazy" />
+          <figcaption>La Charretterie, long tables</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/gallery-couple.jpg" alt="A couple standing in the meadow behind Château de Bonnemare" loading="lazy" />
+          <figcaption>The meadow, behind the château</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="images/gallery-chapel.jpg" alt="A ceremony in progress at the private chapel at Bonnemare" loading="lazy" />
+          <figcaption>The chapel, mid-ceremony</figcaption>
+        </figure>
+      </div>
+      <div class="gallery__progress" aria-hidden="true">
+        <span class="gallery__bar"><span class="gallery__bar-fill"></span></span>
+      </div>
+    </section>
+
+    <section id="seasons" class="seasons" data-reveal aria-label="When to marry">
+      <header class="section-head">
+        <p class="eyebrow">When to Marry</p>
+        <h2>Normandy Through the Seasons</h2>
+      </header>
+      <div class="seasons__body">
+        <div class="seasons__tabs" role="tablist" aria-label="Choose a season">
+          <button class="seasons__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="season-spring" id="tab-spring" data-season="spring">Spring</button>
+          <button class="seasons__tab" type="button" role="tab" aria-selected="false" aria-controls="season-summer" id="tab-summer" data-season="summer" tabindex="-1">Summer</button>
+          <button class="seasons__tab" type="button" role="tab" aria-selected="false" aria-controls="season-autumn" id="tab-autumn" data-season="autumn" tabindex="-1">Autumn</button>
+          <button class="seasons__tab" type="button" role="tab" aria-selected="false" aria-controls="season-winter" id="tab-winter" data-season="winter" tabindex="-1">Winter</button>
+        </div>
+        <div class="seasons__panels">
+          <div class="seasons__panel is-active" id="season-spring" role="tabpanel" aria-labelledby="tab-spring" data-season-panel="spring">
+            <p class="seasons__desc">The orchards blossom and the light stays soft until nine in the evening. Cool enough for a jacket at the ceremony, still bright for dancing outdoors after dinner.</p>
+            <p class="seasons__detail">Booking window — 9 to 12 months ahead</p>
+          </div>
+          <div class="seasons__panel" id="season-summer" role="tabpanel" aria-labelledby="tab-summer" data-season-panel="summer" hidden>
+            <p class="seasons__desc">Long, unhurried evenings — the classic Normandy wedding season, and the one that books out first. Warm enough for the garden long after the toasts are done.</p>
+            <p class="seasons__detail">Booking window — 12 to 18 months ahead</p>
+          </div>
+          <div class="seasons__panel" id="season-autumn" role="tabpanel" aria-labelledby="tab-autumn" data-season-panel="autumn" hidden>
+            <p class="seasons__desc">Low gold light, and the harvest just finished in the orchards. Our favourite season for photographs, and considerably easier to secure a date.</p>
+            <p class="seasons__detail">Booking window — 6 to 9 months ahead</p>
+          </div>
+          <div class="seasons__panel" id="season-winter" role="tabpanel" aria-labelledby="tab-winter" data-season-panel="winter" hidden>
+            <p class="seasons__desc">Fires lit in every room, and Deauville nearly to yourselves. Not for every couple — but the ones who choose it never regret it.</p>
+            <p class="seasons__detail">Booking window — 3 to 6 months ahead</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process" data-reveal>
+      <header class="section-head">
+        <p class="eyebrow">Process</p>
+        <h2>How We Work</h2>
+      </header>
+      <div class="process__timeline">
+        <div class="process__spine" aria-hidden="true"></div>
+        <div class="process__spine-fill" aria-hidden="true"></div>
+        <ol class="process__list">
+          <li data-reveal-child style="--i:0">
+            <span class="process__marker" aria-hidden="true"><span class="process__dot"></span></span>
+            <div class="process__content">
+              <span class="process__ghost" aria-hidden="true">I</span>
+              <h3>Enquiry &amp; Introduction</h3>
+              <p>A conversation, not a questionnaire. We learn what matters to you before we mention a single venue.</p>
+            </div>
+          </li>
+          <li data-reveal-child style="--i:1">
+            <span class="process__marker" aria-hidden="true"><span class="process__dot"></span></span>
+            <div class="process__content">
+              <span class="process__ghost" aria-hidden="true">II</span>
+              <h3>Design &amp; Discovery</h3>
+              <p>We shortlist properties and vendors matched to your date, guest count, and sensibility, and build the framework of the week.</p>
+            </div>
+          </li>
+          <li data-reveal-child style="--i:2">
+            <span class="process__marker" aria-hidden="true"><span class="process__dot"></span></span>
+            <div class="process__content">
+              <span class="process__ghost" aria-hidden="true">III</span>
+              <h3>The Immersion Visit</h3>
+              <p>You walk the shortlist in person, meet the châtelains and the craftspeople, and choose with the place in front of you, not a brochure.</p>
+            </div>
+          </li>
+          <li data-reveal-child style="--i:3">
+            <span class="process__marker" aria-hidden="true"><span class="process__dot"></span></span>
+            <div class="process__content">
+              <span class="process__ghost" aria-hidden="true">IV</span>
+              <h3>Wedding Week</h3>
+              <p>We manage every arriving guest, delivery, and hour of the schedule, so the only thing you attend to is each other.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="testimonials" data-reveal aria-label="Testimonials" aria-roledescription="carousel">
+      <div class="testimonial__viewport" aria-live="polite">
+        <blockquote class="testimonial is-active" data-index="0">
+          <img class="testimonial__avatar" src="images/avatars/avatar-1.jpg" alt="" aria-hidden="true" />
+          <p>“We found a corner of the château no one had shown us on the tour, and somehow it was exactly right. Every guest asked how we'd discovered it.”</p>
+          <cite>Eleanor &amp; James — Château de Bonnemare</cite>
+        </blockquote>
+        <blockquote class="testimonial" data-index="1" aria-hidden="true">
+          <img class="testimonial__avatar" src="images/avatars/avatar-2.jpg" alt="" aria-hidden="true" />
+          <p>“We wanted a real château, not a rented one for the afternoon. They understood the difference immediately.”</p>
+          <cite>Camille &amp; Thomas — Château de Bonnemare</cite>
+        </blockquote>
+        <blockquote class="testimonial" data-index="2" aria-hidden="true">
+          <img class="testimonial__avatar" src="images/avatars/avatar-3.jpg" alt="" aria-hidden="true" />
+          <p>“Deauville out of season, in November light — nobody had suggested that to us before. It was the best idea of the whole year.”</p>
+          <cite>Sarah &amp; David — Deauville</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial__controls">
+        <button class="testimonial__prev" type="button" aria-label="Previous testimonial">←</button>
+        <button class="testimonial__next" type="button" aria-label="Next testimonial">→</button>
+      </div>
+    </section>
+
+    <section id="contact" class="enquiry" data-reveal>
+      <header class="section-head">
+        <p class="eyebrow">Request an Invitation</p>
+        <h2>Begin the Conversation</h2>
+        <p class="enquiry__intro">Tell us a little about the day you're imagining. We reply personally, usually within two days.</p>
+      </header>
+      <form class="enquiry__form" action="#" method="post">
+        <div class="field-row">
+          <div class="field">
+            <label for="names">Your Names</label>
+            <input id="names" name="names" type="text" required />
+          </div>
+          <div class="field">
+            <label for="date">Wedding Date or Season</label>
+            <input id="date" name="date" type="text" placeholder="e.g. September 2027" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="guests">Estimated Guest Count</label>
+            <input id="guests" name="guests" type="number" min="0" />
+          </div>
+          <div class="field">
+            <label for="region">Venue of Interest</label>
+            <select id="region" name="region">
+              <option>Château de Bonnemare</option>
+              <option>Deauville</option>
+              <option>Undecided</option>
+            </select>
+          </div>
+        </div>
+        <div class="field field--full">
+          <label for="vision">Your Vision</label>
+          <textarea id="vision" name="vision" rows="4" placeholder="A little about the two of you, and the day you're imagining."></textarea>
+        </div>
+        <button type="submit" class="btn btn--enquiry">Send Your Enquiry</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <svg class="chateau-mark chateau-mark--static chateau-mark--footer" aria-hidden="true" viewBox="0 0 600 200">
+      <use href="#chateau-motif"></use>
+    </svg>
+    <p class="footer__wordmark">Wedding in Normandy</p>
+    <p class="footer__contact">hello@weddinginnormandy.com · Bayeux, France</p>
+    <p class="footer__copyright">© 2026 Wedding in Normandy. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
