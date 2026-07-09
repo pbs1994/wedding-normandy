@@ -398,6 +398,35 @@ body.is-loaded .site-header {
   max-width: 42ch;
 }
 
+/* On narrow viewports the crop is tall and tight — recenter on the couple
+   (who sit left-of-center in the source photo) instead of the geometric
+   middle, and swap the corner-weighted scrim for a stronger, even wash
+   full-bleed dark enough to hold text over any part of the frame. */
+@media (max-width: 700px) {
+  .hero__image {
+    object-position: 28% 30%;
+  }
+
+  .hero__scrim {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-oak-ink) 55%, transparent) 0%,
+      color-mix(in srgb, var(--color-oak-ink) 48%, transparent) 22%,
+      color-mix(in srgb, var(--color-oak-ink) 62%, transparent) 45%,
+      color-mix(in srgb, var(--color-oak-ink) 94%, transparent) 100%
+    );
+  }
+
+  .hero__content {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 4px 18px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero__subline {
+    color: var(--text-on-dark);
+    opacity: 0.85;
+  }
+}
+
 [data-load-item] {
   opacity: 0;
   transform: translateY(18px);
