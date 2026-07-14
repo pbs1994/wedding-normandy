@@ -176,26 +176,34 @@ input, select, textarea {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
   font-size: var(--step-small);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.9em 1.8em;
   border: 1px solid currentColor;
-  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
 
 .btn--enquiry {
-  color: var(--surface-bg-deep);
-  background: var(--color-chalk);
-  border-color: var(--color-chalk);
+  color: var(--color-chalk);
+  background: var(--color-oak-ink);
+  border-color: var(--color-oak-ink);
 }
 
 .btn--enquiry:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--color-chalk);
+}
+
+.btn--enquiry__arrow {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.btn--enquiry:hover .btn--enquiry__arrow {
+  transform: translateX(4px);
 }
 
 /* section container rhythm, applied per-section below rather than via a
@@ -1210,17 +1218,89 @@ body.is-loaded [data-load-item] {
   padding: var(--space-7) var(--gutter);
 }
 
-.enquiry .section-head {
-  max-width: var(--max-content);
-  margin: 0 auto var(--space-5);
-}
-
-.enquiry__form {
+.enquiry__layout {
   max-width: var(--max-content);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.enquiry__intro-col h2 {
+  margin-top: var(--space-1);
+}
+
+.enquiry__intro {
+  margin-top: var(--space-2);
+  color: var(--text-muted-dark);
+  font-size: var(--step-lead);
+}
+
+.enquiry__meta {
+  margin-top: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-hairline-dark);
+}
+
+.enquiry__meta-item dt {
+  font-size: var(--step-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-dark);
+}
+
+.enquiry__meta-item dd {
+  margin-top: 0.35rem;
+  font-family: var(--font-display);
+  font-size: var(--step-h3);
+  font-weight: 400;
+}
+
+.enquiry__meta-item dd a {
+  border-bottom: 1px solid var(--border-hairline-dark);
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.enquiry__meta-item dd a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.enquiry__card {
+  position: relative;
+  background: var(--surface-bg-alt);
+  color: var(--text-primary);
+  padding: var(--space-5) var(--gutter);
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.enquiry__card-mark {
+  position: absolute;
+  right: -8%;
+  bottom: -18%;
+  width: 65%;
+  color: var(--color-oak-ink);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.enquiry__card-mark path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.enquiry__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .field-row {
@@ -1240,30 +1320,49 @@ body.is-loaded [data-load-item] {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted-dark);
+  color: var(--accent-secondary);
+}
+
+.field__required {
+  color: var(--accent);
+  margin-left: 0.25em;
 }
 
 .field input,
 .field select,
 .field textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border-hairline-dark);
-  padding: 0.6em 0;
-  color: var(--text-on-dark);
+  background: var(--surface-bg);
+  border: 1px solid var(--border-hairline);
+  padding: 0.85em 1em;
+  color: var(--text-primary);
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: color-mix(in srgb, var(--color-oak-ink) 32%, transparent);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-aged-brass) 16%, transparent);
 }
 
 .field select {
-  background: var(--surface-bg-deep);
-}
-
-.field select option {
-  background: var(--surface-bg-deep);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23A47B3F' stroke-width='1.6'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  padding-right: 2.5em;
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: var(--text-muted-dark);
+  color: var(--text-muted);
 }
 
 .field textarea {
@@ -1272,12 +1371,26 @@ body.is-loaded [data-load-item] {
 
 .btn--enquiry {
   align-self: flex-start;
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
 }
 
 @media (min-width: 700px) {
   .field-row {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .enquiry__layout {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+  }
+  .enquiry__intro-col {
+    position: sticky;
+    top: var(--space-5);
+  }
+  .enquiry__card {
+    padding: var(--space-6) var(--space-6);
   }
 }
 
