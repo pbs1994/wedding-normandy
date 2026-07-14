@@ -107,32 +107,35 @@
 
     <section id="venues" class="venues" data-reveal>
       <header class="section-head">
-        <p class="eyebrow">Our Venues</p>
-        <h2>Normandy, and the Coast</h2>
+        <p class="eyebrow">Our Signature Venue</p>
+        <h2>Château de Bonnemare</h2>
       </header>
       <div class="venues__grid">
-        <article class="venue venue--feature" data-reveal-child style="--i:0">
-          <div class="venue__image">
-            <!-- Photo: Château de Bonnemare, Radepont — 16th-century facade and lawn. -->
-            <img src="images/venue-bonnemare.jpg" alt="Château de Bonnemare, a 16th-century château in the Andelle valley" loading="lazy" />
+        <article class="venue venue--feature venue--solo" data-reveal-child style="--i:0">
+          <div class="venue__image venue__carousel" role="region" aria-roledescription="carousel" aria-label="Photos of Château de Bonnemare">
+            <div class="venue__slide is-active" data-index="0">
+              <!-- Photo: Château de Bonnemare, Radepont — 16th-century facade and lawn. -->
+              <img src="images/venue-bonnemare.jpg" alt="Château de Bonnemare, a 16th-century château in the Andelle valley" loading="lazy" />
+            </div>
+            <div class="venue__slide" data-index="1" aria-hidden="true">
+              <!-- Photo: couple kissing on the lawn in front of the château. -->
+              <img src="images/venue-bonnemare-kiss.jpg" alt="A couple kissing on the lawn in front of Château de Bonnemare" loading="lazy" />
+            </div>
+            <div class="venue__slide" data-index="2" aria-hidden="true">
+              <!-- Photo: one of the historic-monument suites inside the château. -->
+              <img src="images/venue-bonnemare-suite.jpg" alt="A canopied four-poster bed in one of the historic-monument suites at Château de Bonnemare" loading="lazy" />
+            </div>
+            <div class="venue__carousel-controls">
+              <button class="venue__carousel-prev" type="button" aria-label="Previous photo">←</button>
+              <div class="venue__carousel-dots"></div>
+              <button class="venue__carousel-next" type="button" aria-label="Next photo">→</button>
+            </div>
           </div>
           <div class="venue__caption">
             <p class="venue__tag">16th-Century Château</p>
             <h3>Château de Bonnemare</h3>
             <p class="venue__region">Radepont, Eure — the Andelle Valley</p>
             <p class="venue__desc">A Renaissance château on 22 hectares, with a private chapel, walled gardens, and two suites classified as historic monuments.</p>
-          </div>
-        </article>
-        <article class="venue" data-reveal-child style="--i:1">
-          <div class="venue__image">
-            <!-- Photo: Belle Époque half-timbered villas above the beach on the Côte Fleurie. -->
-            <img src="images/venue-deauville.jpg" alt="Belle Époque half-timbered villas overlooking the beach on the Côte Fleurie near Deauville" loading="lazy" />
-          </div>
-          <div class="venue__caption">
-            <p class="venue__tag">Coastal Destination</p>
-            <h3>Deauville</h3>
-            <p class="venue__region">Côte Fleurie</p>
-            <p class="venue__desc">For couples drawn to the coast: Belle Époque villas, boardwalk light, and the particular elegance of Deauville out of season.</p>
           </div>
         </article>
       </div>

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProcessTimeline(reducedMotion);
   initStatsCounter(reducedMotion);
   initGallery();
+  initVenueCarousel(reducedMotion);
   initSeasonsTabs();
   initHeroParallax(reducedMotion);
   initTestimonialRotator(reducedMotion);
@@ -138,6 +139,70 @@ function initTestimonialRotator(reducedMotion) {
 
   section.addEventListener('mouseenter', stopAutoRotate);
   section.addEventListener('mouseleave', startAutoRotate);
+
+  startAutoRotate();
+}
+
+/* ─── Venue photo carousel: cross-fade slides, dots, autoplay ───────────── */
+
+function initVenueCarousel(reducedMotion) {
+  const carousel = document.querySelector('.venue__carousel');
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.venue__slide'));
+  const prevBtn = carousel.querySelector('.venue__carousel-prev');
+  const nextBtn = carousel.querySelector('.venue__carousel-next');
+  const dotsContainer = carousel.querySelector('.venue__carousel-dots');
+  if (slides.length < 2) return;
+
+  let current = slides.findIndex((s) => s.classList.contains('is-active'));
+  if (current === -1) current = 0;
+  let timer = null;
+
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Go to photo ${index + 1}`);
+    if (index === current) dot.classList.add('is-active');
+    dot.addEventListener('click', () => { show(index); resetAutoRotate(); });
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+
+  function show(index) {
+    const nextIndex = (index + slides.length) % slides.length;
+    slides[current].classList.remove('is-active');
+    slides[current].setAttribute('aria-hidden', 'true');
+    dots[current].classList.remove('is-active');
+    slides[nextIndex].classList.add('is-active');
+    slides[nextIndex].removeAttribute('aria-hidden');
+    dots[nextIndex].classList.add('is-active');
+    current = nextIndex;
+  }
+
+  function advance(direction) {
+    show(current + direction);
+  }
+
+  function startAutoRotate() {
+    if (reducedMotion) return;
+    timer = setInterval(() => advance(1), 6000);
+  }
+
+  function stopAutoRotate() {
+    if (timer) clearInterval(timer);
+  }
+
+  function resetAutoRotate() {
+    stopAutoRotate();
+    startAutoRotate();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { advance(-1); resetAutoRotate(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { advance(1); resetAutoRotate(); });
+
+  carousel.addEventListener('mouseenter', stopAutoRotate);
+  carousel.addEventListener('mouseleave', startAutoRotate);
 
   startAutoRotate();
 }
