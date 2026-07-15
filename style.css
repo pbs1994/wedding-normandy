@@ -198,11 +198,22 @@ input, select, textarea {
   color: var(--color-chalk);
 }
 
-.btn--enquiry__arrow {
+.btn--whatsapp {
+  color: var(--color-chalk);
+  background: #25D366;
+  border-color: #25D366;
+}
+
+.btn--whatsapp:hover {
+  background: #1EBE5A;
+  border-color: #1EBE5A;
+}
+
+.btn__arrow {
   transition: transform var(--dur-fast) var(--ease-out);
 }
 
-.btn--enquiry:hover .btn--enquiry__arrow {
+.btn:hover .btn__arrow {
   transform: translateX(4px);
 }
 
@@ -1278,6 +1289,10 @@ body.is-loaded [data-load-item] {
 .enquiry__meta-item dd a:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+.btn--whatsapp {
+  margin-top: var(--space-4);
 }
 
 .enquiry__card {
