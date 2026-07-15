@@ -258,6 +258,7 @@ input, select, textarea {
   color: var(--text-on-dark);
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   transition: opacity var(--dur-base) var(--ease-out);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.22) 65%, transparent 100%);
 }
 
 body.is-loaded .site-header {
@@ -312,8 +313,16 @@ body.is-loaded .site-header {
 }
 
 .nav__ghost-cta {
-  border-bottom: 1px solid var(--accent);
-  color: var(--accent);
+  color: var(--color-oak-ink);
+  background: var(--accent);
+  padding: 0.5em 1.1em;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.nav__ghost-cta:hover {
+  background: var(--color-chalk);
 }
 
 @media (min-width: 860px) {
@@ -386,6 +395,7 @@ body.is-loaded .site-header {
 .hero__content .eyebrow {
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .hero__headline {
