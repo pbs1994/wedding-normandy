@@ -323,16 +323,18 @@ body.is-loaded .site-header {
   padding: var(--space-1) 0;
 }
 
-.nav__ghost-cta {
+.nav__links .nav__ghost-cta {
+  display: inline-block;
   color: var(--color-oak-ink);
   background: var(--accent);
-  padding: 0.5em 1.1em;
+  padding: 0.7em 1.6em;
   border-radius: 999px;
   font-weight: 600;
+  white-space: nowrap;
   transition: background-color var(--dur-fast) var(--ease-out);
 }
 
-.nav__ghost-cta:hover {
+.nav__links .nav__ghost-cta:hover {
   background: var(--color-chalk);
 }
 
